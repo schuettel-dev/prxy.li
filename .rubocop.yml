@@ -198,6 +198,9 @@ Minitest/AssertOutput:
 Minitest/AssertPathExists:
   Enabled: true
 
+Minitest/AssertPredicate:
+  Enabled: true
+
 Minitest/AssertSilent:
   Enabled: true
 
@@ -222,6 +225,9 @@ Minitest/RefuteKindOf:
 Minitest/RefutePathExists:
   Enabled: true
 
+Minitest/RefutePredicate:
+  Enabled: true
+
 Minitest/TestMethodName:
   Enabled: true
 
@@ -232,6 +238,9 @@ Minitest/UnspecifiedException:
   Enabled: true
 
 Naming/BlockForwarding:
+  Enabled: true
+
+Rails/ActionControllerTestCase:
   Enabled: true
 
 Rails/ActiveRecordCallbacksOrder:
@@ -249,6 +258,15 @@ Rails/AttributeDefaultBlockValue:
 Rails/CompactBlank:
   Enabled: true
 
+Rails/DeprecatedActiveModelErrorsMethods:
+  Enabled: true
+
+Rails/DuplicateAssociation:
+  Enabled: true
+
+Rails/DuplicateScope:
+  Enabled: true
+
 Rails/DurationArithmetic:
   Enabled: true
 
@@ -264,7 +282,13 @@ Rails/ExpandedDateRange:
 Rails/FindById:
   Enabled: true
 
+Rails/I18nLazyLookup:
+  Enabled: true
+
 Rails/I18nLocaleAssignment:
+  Enabled: true
+
+Rails/I18nLocaleTexts:
   Enabled: true
 
 Rails/Inquiry:
@@ -274,6 +298,9 @@ Rails/MailerName:
   Enabled: true
 
 Rails/MatchRoute:
+  Enabled: true
+
+Rails/MigrationClassName:
   Enabled: true
 
 Rails/NegateInclude:
@@ -310,6 +337,9 @@ Rails/SquishedSQLHeredocs:
   Enabled: true
 
 Rails/TimeZoneAssignment:
+  Enabled: true
+
+Rails/TransactionExitStatement:
   Enabled: true
 
 Rails/UnusedIgnoredColumns:
@@ -418,6 +448,9 @@ Style/MultilineInPatternThen:
   Enabled: true
 
 Style/NegatedIfElseCondition:
+  Enabled: true
+
+Style/NestedFileDirname:
   Enabled: true
 
 Style/NilLambda:
