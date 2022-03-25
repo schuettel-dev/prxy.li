@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  root to: 'links#new'
+  resources :links, only: %i[index new create destroy]
+  get ':token', to: 'redirects#new', as: :redirect
 end

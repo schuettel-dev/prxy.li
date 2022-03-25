@@ -1,0 +1,31 @@
+<h1>Links</h1>
+
+<div class="my-10">
+  <%= link_to 'New link', new_link_path, class: 'py-1 px-16 bg-teal-200 border border-teal-300 hover:border-teal-500 rounded-lg' %>
+</div>
+
+<div class="mt-10 text-right mx-4">
+  <span>
+    <%= "#{@links.count} link".pluralize(@links.count) %>
+  </span>
+</div>
+
+<% if @links.any? %>
+  <ul class="flex flex-col rounded-xl border border-2 border-gray-400 divide-y divide-y-2 divide-gray-400">
+    <% @links.each do |link| %>
+      <li class="flex flex-col p-8">
+        <div>
+          <%= link_to redirect_url(token: link.token), redirect_url(token: link.token), target: :_blank, class: 'text-teal-600 text-2xl' %>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-sm text-gray-400">
+            <%= link.target %>
+          </span>
+          <span class="text-sm text-gray-500">
+            Visited <%= "#{link.redirect_count} time".pluralize(link.redirect_count) %>
+          </span>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

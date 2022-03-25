@@ -237,7 +237,7 @@ Minitest/UnreachableAssertion:
 Minitest/UnspecifiedException:
   Enabled: true
 
-Naming/BlockForwarding:
+Naming/BlockRedirecting:
   Enabled: true
 
 Rails/ActionControllerTestCase:
@@ -360,7 +360,7 @@ Security/IoMethods:
 Style/AccessorGrouping:
   Enabled: true
 
-Style/ArgumentsForwarding:
+Style/ArgumentsRedirecting:
   Enabled: true
 
 Style/ArrayCoercion:
