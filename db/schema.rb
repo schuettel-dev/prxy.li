@@ -17,7 +17,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_25_120630) do
   create_table "links", force: :cascade do |t|
     t.string "token", null: false
     t.string "target", null: false
-    t.datetime "expires_at", default: "9999-12-31 22:59:59", null: false
+    t.datetime "expires_at", null: false
     t.integer "redirect_count", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body, input {
+  @apply bg-slate-900 text-teal-100 font-mono;
+}
+
+.input {
+  @apply bg-slate-900 text-teal-100 font-mono bg-slate-800 border-slate-700 focus:border-slate-700 focus:ring-0 focus:outline-teal-500;
+}
+
+input[type="checkbox"]:checked {
+  @apply bg-slate-800;
+}
+
+input[type="checkbox"]:hover {
+  @apply bg-teal-500 text-teal-900;
+}
+
+input[type="checkbox"]:focus {
+  @apply ring-teal-800 text-teal-900;
+}
+
+header {
+  @apply bg-black py-4 tracking-widest mb-10;
+}
+
+.h1 {
+  @apply text-teal-500 uppercase tracking-wide;
+}
+
+.link {
+  @apply text-yellow-500 hover:underline hover:underline underline-offset-4;
+}
+
+.proxy-link {
+  @apply text-green-500 text-2xl hover:text-white transition;
+}
+
+.label {
+  @apply text-slate-400;
+}
+
+.button {
+  @apply bg-teal-300 text-teal-900 py-1 hover:bg-teal-400 cursor-pointer;
+}
+
+.field_with_errors {
+  @apply w-full;
+}

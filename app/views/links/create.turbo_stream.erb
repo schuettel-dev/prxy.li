@@ -1,0 +1,3 @@
+<%= turbo_stream.replace 'links', partial: 'links/links', locals: { links: Link.anti_chronologically } %>
+
+<%= turbo_stream.replace 'link-form', partial: 'links/link_to_new' %>

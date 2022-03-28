@@ -1,0 +1,11 @@
+<%= turbo_frame_tag "links" do %>
+  <div>
+    <%= t('link.with_count', count: links.count) %>
+  </div>
+
+  <% if links.any? %>
+    <ul class="flex flex-col bg-slate-800 divide-y divide-y-2 divide-slate-900">
+      <%= render links %>
+    </ul>
+  <% end %>
+<% end %>

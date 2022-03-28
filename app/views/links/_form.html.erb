@@ -1,0 +1,30 @@
+<%= turbo_frame_tag 'link-form' do %>
+  <%= form_with(model: link) do |form| %>
+    <div class="flex flex-col gap-y-4">
+      <div class="flex flex-col">
+        <%= form.label :target, class: 'label' %>
+        <%= form.text_field :target, class: 'input w-full' %>
+        <% if form.object.errors.key?(:target) %>
+          <p class="mt-1 error text-sm text-red-400">
+            <%= form.object.errors.full_messages_for(:target).join(', ') %>
+          </p>
+        <% end %>
+      </div>
+
+      <div class="flex flex-col">
+        <%= form.label :never_expire, class: 'flex items-center gap-x-4 label' do %>
+          <%= form.check_box :never_expire, class: 'input' %>
+          <%= Link.human_attribute_name(:never_expire) %>
+        <% end %>
+      </div>
+
+      <div class="flex flex-col">
+        <%= form.submit t('link.actions.add'), class: 'button' %>
+      </div>
+
+      <div>
+        <%= link_to t('shared.actions.cancel'), links_path, class: 'shy-link', 'data-turbo-frame': '_top' %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
