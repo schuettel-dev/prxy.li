@@ -35,7 +35,7 @@ header {
 }
 
 .proxy-link {
-  @apply text-green-500 text-2xl hover:text-white transition;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-green-500 via-yellow-400 to-teal-500 text-2xl hover:text-white transition;
 }
 
 .label {
