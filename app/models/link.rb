@@ -30,7 +30,7 @@ class Link < ApplicationRecord
   private
 
   def initialize_token
-    self.token ||= SecureRandom.alphanumeric(6)
+    self.token ||= (0...6).map { [*('a'..'z'), *('A'..'Z')].flatten.to_a[rand(52)] }.join
   end
 
   def initialize_expires_at
