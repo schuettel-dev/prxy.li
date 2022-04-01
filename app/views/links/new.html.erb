@@ -1,6 +1,6 @@
 <div class="flex justify-between mb-10">
   <h1 class="h1"><%= t('link.actions.new') %></h1>
-  <%= link_to t('shared.actions.back_to_list'), links_path, class: 'link' %>
+  <%= link_to t('shared.actions.back_to_list'), root_path, class: 'link' %>
 </div>
 
 <%= render 'form', link: @link %>

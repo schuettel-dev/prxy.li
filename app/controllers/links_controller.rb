@@ -12,7 +12,7 @@ class LinksController < ApplicationController
 
     if @link.save
       respond_to do |format|
-        format.html { redirect_to links_path }
+        format.html { redirect_to root_path }
         format.turbo_stream
       end
     else
@@ -25,7 +25,7 @@ class LinksController < ApplicationController
     @link.destroy
 
     respond_to do |format|
-      format.html { redirect_to links_path }
+      format.html { redirect_to root_path }
       format.turbo_stream
     end
   end
