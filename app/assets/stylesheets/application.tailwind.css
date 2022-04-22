@@ -6,22 +6,6 @@ body, input {
   @apply bg-slate-900 text-teal-100 font-mono;
 }
 
-.input {
-  @apply bg-slate-900 text-teal-100 font-mono bg-slate-800 border-slate-700 focus:border-slate-700 focus:ring-0 focus:outline-teal-500;
-}
-
-input[type="checkbox"]:checked {
-  @apply bg-slate-800;
-}
-
-input[type="checkbox"]:hover {
-  @apply bg-teal-500 text-teal-900;
-}
-
-input[type="checkbox"]:focus {
-  @apply ring-teal-800 text-teal-900;
-}
-
 header {
   @apply bg-black py-4 tracking-widest mb-10;
 }
@@ -31,25 +15,56 @@ header {
 }
 
 .link {
-  @apply text-yellow-500 hover:underline hover:underline underline-offset-4;
+  @apply bg-teal-500 hover:bg-yellow-300  text-black py-1 px-3 rounded transition
 }
 
-.proxy-link {
+.shy-link {
+  @apply text-teal-300/40 hover:text-yellow-500 transition;
+}
+
+.funky-link {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-green-500 via-yellow-400 to-teal-500 text-2xl hover:text-white transition;
 }
 
+/* buttons */
+.button {
+  @apply bg-teal-300 text-black py-1 hover:bg-teal-400 cursor-pointer rounded;
+}
+
+.dangerous-button {
+  @apply hover:text-red-500 text-slate-700 transition;
+}
+
+/* form elements */
 .label {
   @apply text-slate-400;
 }
 
-.button {
-  @apply bg-teal-300 text-teal-900 py-1 hover:bg-teal-400 cursor-pointer;
+.checkbox-label {
+  @apply inline-flex items-center gap-x-4 hover:text-slate-300 transition;
+}
+
+.input {
+  @apply bg-slate-800 border-slate-700 focus:border-slate-700 focus:ring-0 focus:outline-teal-500 rounded;
+}
+
+.input-with-add-on {
+  @apply bg-slate-800 border-slate-700 focus:border-slate-700 focus:ring-0 focus:outline-teal-500 rounded-r;
+}
+
+
+.checkbox, .checkbox:checked {
+  @apply bg-slate-800 rounded p-3;
+}
+
+.checkbox:hover, .checkbox:checked:hover {
+  @apply bg-slate-700 text-black transition;
+}
+
+.checkbox:focus, .checkbox:checked:focus {
+  @apply ring-0 outline-0 text-black;
 }
 
 .field_with_errors {
   @apply w-full;
-}
-
-.dangerous-button {
-  @apply bg-red-500 text-white py-1 px-5 hover:bg-red-600;
 }

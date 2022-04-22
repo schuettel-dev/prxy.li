@@ -5,6 +5,7 @@ class Link < ApplicationRecord
 
   before_validation :initialize_token
   before_validation :initialize_expires_at
+  before_validation :sanitize_target
 
   validates :token, :target, :expires_at, presence: true
   validates :token, uniqueness: true
@@ -37,10 +38,14 @@ class Link < ApplicationRecord
     self.expires_at ||= never_expire&.to_i.positive? ? SOMEHOW_NEVER : 1.week.from_now
   end
 
+  def sanitize_target
+    self.target = target.gsub(/https?:\/\//, '')
+  end
+
   def target_is_a_valid_url
     return if errors.any?
 
-    url = URI.parse(target)
+    url = URI.parse("https://#{target}")
     return true if (url.kind_of?(URI::HTTP) || url.kind_of?(URI::HTTPS)) && url.authority.present?
     errors.add(:target, 'is not a valid URL')
   end
