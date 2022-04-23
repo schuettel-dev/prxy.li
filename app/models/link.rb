@@ -28,6 +28,10 @@ class Link < ApplicationRecord
     self.expires_at == SOMEHOW_NEVER
   end
 
+  def target_with_https
+    "https://#{target}"
+  end
+
   private
 
   def initialize_token
@@ -45,7 +49,7 @@ class Link < ApplicationRecord
   def target_is_a_valid_url
     return if errors.any?
 
-    url = URI.parse("https://#{target}")
+    url = URI.parse(target_with_https)
     return true if (url.kind_of?(URI::HTTP) || url.kind_of?(URI::HTTPS)) && url.authority.present?
     errors.add(:target, 'is not a valid URL')
   end
