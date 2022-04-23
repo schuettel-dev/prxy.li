@@ -12,8 +12,11 @@
 
   <body>
     <header class="px-4">
-      <div class="max-w-3xl mx-auto">
-        prxy.li
+      <div class="max-w-3xl mx-auto flex justify-between items-baseline">
+        <span>prxy.li</span>
+        <% if signed_in? %>
+          <%= button_to 'Sign out', sessions_path, method: :delete, class: "opacity-30 hover:opacity-100 transition text-xs" %>
+        <% end %>
       </div>
     </header>
     <main class="px-4">
