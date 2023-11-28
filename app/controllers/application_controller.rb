@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   end
 
   def signed_in?
-    session[:signed_in] === true
+    session[:signed_in] == true
   end
 
   def sign_in!
