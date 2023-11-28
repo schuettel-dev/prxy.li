@@ -2,22 +2,46 @@ require "test_helper"
 
 class LinksControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get links_index_url
+    sign_in!
+    get links_path
+
     assert_response :success
   end
 
   test "should get new" do
-    get links_new_url
+    sign_in!
+    get new_link_path
+
     assert_response :success
   end
 
-  test "should get create" do
-    get links_create_url
+  test "should post create" do
+    sign_in!
+
+    assert_difference -> { Link.count }, +1 do
+      post links_path, params: {
+        link: {
+          target: "https://example.com",
+          never_expire: "0"
+        }
+      }
+    end
+
+    follow_redirect!
+
     assert_response :success
   end
 
   test "should get destroy" do
-    get links_destroy_url
+    link = links(:rubymonstas)
+
+    sign_in!
+    assert_difference -> { Link.count }, -1 do
+      delete link_path(link)
+    end
+
+    follow_redirect!
+
     assert_response :success
   end
 end

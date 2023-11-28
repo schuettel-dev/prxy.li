@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       sign_in!
       redirect_to root_path
     else
-      flash[:notice] = "That didn't work"
+      flash[:notice] = "That didn't work" # rubocop:disable Rails/I18nLocaleTexts
       render :new, status: :unprocessable_entity
     end
   end
@@ -25,6 +25,6 @@ class SessionsController < ApplicationController
     return "pass" if Rails.env.development?
     return "pass-test" if Rails.env.test?
 
-    ENV["PRXY_LI_ADMIN_PASSWORD"]
+    Rails.application.credentials.admin_password
   end
 end

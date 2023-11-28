@@ -8,7 +8,7 @@ class RedirectsController < ApplicationController
       link.visited!
       redirect_to link.target_with_https, allow_other_host: true
     else
-      head 404
+      head :not_found
     end
   end
 end
